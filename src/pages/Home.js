@@ -1,5 +1,5 @@
 import React from 'react'
-import Resultados from '../components/Resultados'
+import Resultados from '../components/contenido/Resultados'
 
 const Home = () => {
     return (

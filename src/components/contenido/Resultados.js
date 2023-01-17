@@ -6,6 +6,8 @@ const Resultados = () => {
     const [resultado, setResultado] = useState(false)
 
     const resultados = async () => {
+        // const resul = await fetch('https://v3.football.api-sports.io/fixtures?next=5'
+        // const resul = await fetch('https://v3.football.api-sports.io/fixtures?last=5'
         const resul = await fetch('https://v3.football.api-sports.io/fixtures?live=all', {
             method: 'Get',
             headers: {
@@ -25,7 +27,7 @@ const Resultados = () => {
 
     return (
         <>
-        <h1>Partidos de hoy</h1>
+        <h1>Partidos en vivo</h1>
             <div className={styles.container}>
                 {
                     resultado ? (
