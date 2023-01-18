@@ -5,13 +5,15 @@ const Resultados = () => {
 
     const [resultado, setResultado] = useState(false)
 
+    const api_key = process.env.REACT_APP_KEY;
+
     const resultados = async () => {
         // const resul = await fetch('https://v3.football.api-sports.io/fixtures?next=5'
         // const resul = await fetch('https://v3.football.api-sports.io/fixtures?last=5'
-        const resul = await fetch('https://v3.football.api-sports.io/fixtures?live=all', {
+        const resul = await fetch(`https://v3.football.api-sports.io/fixtures?live=all`, {
             method: 'Get',
             headers: {
-                'x-rapidapi-key': '7bab77a6c633d688ed5b1c3dbc192735',
+                'x-rapidapi-key': `${api_key}`,
                 'x-rapidapi-host': 'v3.football.api-sports.io'
             }
         })
@@ -22,18 +24,19 @@ const Resultados = () => {
     }
 
     useEffect(() => {
-        // resultados()
+        resultados()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
         <>
-        <h1>Partidos en vivo</h1>
+            <h1>Partidos en vivo</h1>
             <div className={styles.container}>
                 {
                     resultado ? (
                         resultado.map((resul) => (
                             <div className={styles.content} key={resul.fixture.id}>
-                            
+
                                 <div className={styles.infoLiga}>
                                     <div className={styles.logo}>
                                         <img src={resul.league.logo} alt='logo' />
@@ -61,7 +64,7 @@ const Resultados = () => {
                                         </div>
                                     </div>
                                     <div className={styles.marcador}>
-                                        {resul.goals.home } <br/> {resul.goals.away}
+                                        {resul.goals.home} <br /> {resul.goals.away}
                                     </div>
                                     <span>{resul.fixture.status.elapsed}'</span>
                                 </div>

@@ -2,7 +2,9 @@ import React from 'react'
 
 const Proximos = () => {
   return (
-    <div>Proximos</div>
+    <>
+      <h1>Proximos Partidos</h1>
+    </>
   )
 }
 

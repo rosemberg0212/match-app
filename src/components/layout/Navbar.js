@@ -13,8 +13,8 @@ const Navbar = () => {
                 <div className={styles.menu}>
                     <ul className={styles.list}>
                         <li><Link to='/'>Jungando</Link></li>
-                        <li><Link to='/proximos'>Proximos</Link></li>
                         <li><Link to='/terminados'>Terminados</Link></li>
+                        <li><Link to='/proximos'>Proximos</Link></li>
                     </ul>
                 </div>
             </nav>
