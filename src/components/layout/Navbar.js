@@ -4,19 +4,32 @@ import { FiMenu } from 'react-icons/fi';
 
 const Navbar = () => {
 
+    const menu = () => {
+        const main_menu = document.getElementById('main_menu')
+        main_menu.classList.toggle(styles.main_menu_show)
+    }
+
     return (
         <>
-            <nav className={styles.navbar}>
-                <Link to='/' className={styles.logo}>Match</Link>
-                <input type='checkbox' id={styles.toggler} />
-                <label className={styles.toggler} for='toggler'><FiMenu /></label>
-                <div className={styles.menu}>
-                    <ul className={styles.list}>
-                        <li><Link to='/'>Jungando</Link></li>
-                        <li><Link to='/terminados'>Terminados</Link></li>
-                        <li><Link to='/proximos'>Proximos</Link></li>
-                    </ul>
+            <nav className={styles.main_nav}>
+                <Link to='/'>
+
+                    <p className={styles.logo}>Match</p>
+                </Link>
+                <div id='toggle_menu' className={styles.toggle_menu} onClick={() => menu()}>
+                    <FiMenu className={styles.toggle_menu_icon} />
                 </div>
+                <ul id='main_menu' className={styles.main_menu}>
+                    <li className={styles.main_menu_item}>
+                        <Link to='/' className={styles.main_menu_link}>Jugando</Link>
+                    </li>
+                    <li className={styles.main_menu_item}>
+                        <Link to='terminados' className={styles.main_menu_link}>Terminados</Link>
+                    </li>
+                    <li className={styles.main_menu_item}>
+                        <Link to='proximos' className={styles.main_menu_link}>Proximos</Link>
+                    </li>
+                </ul>
             </nav>
         </>
     )

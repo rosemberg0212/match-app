@@ -81,3 +81,10 @@ span{
     top: 2px;
     color: rgb(245, 103, 103);
 }
+
+@media  (max-width: 768px) {
+    .card{
+        width: 350px;
+        height: 110px;
+    }
+}
